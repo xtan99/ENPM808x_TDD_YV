@@ -4,9 +4,15 @@
 
 class Controller {
     private:
-        double kp=0.0, ki=0.0, kd= 0.0;
+        // Only change the PID constants ->
+        double kp=0.0, ki=0.0, kd= 0.0; 
+
+        // Temp values Not to change
+        double max=100.0, min=0.0, dT =0.01;
+        double prev_error=0.0; 
     public:
-        double compute(double reference_value, double output_value);
-        void set_constants(double kp, double ki, double kd);
+        Controller(double kp, double ki, double kd);
+        double compute_pid(double target_setpoint, double prev_output);
+        double calculate(double target_setpoint, double actual_velocity,int iterations);
         void print_constants();
 };
