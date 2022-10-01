@@ -12,12 +12,14 @@
 #include "pid.hpp"
 
 int main() {
-    Controller pid(0, 1, 0);
-    // Reference value is desired velocity
+    // TODO
+    double kp = 0.0, ki = 0.0, kd = 0.0;
     double actual_velocity = 1;
     double target_setpoint = 0.0;
+
+    // Code
+    Controller pid(kp, ki, kd);
     int iterations = 1000;
-    pid.print_constants();
     double output = pid.calculate(target_setpoint, actual_velocity, iterations);
     std::cout << " Final Output : "<<output << " " <<std::endl ;
     return 0;

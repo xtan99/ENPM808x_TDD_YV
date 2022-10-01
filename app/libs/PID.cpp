@@ -42,15 +42,8 @@ void Controller :: print_constants(){
  * @param prev_output 
  * @return double
  */
-
 double Controller::compute_pid(double target_setpoint, double prev_output){
-    double error = target_setpoint - prev_output;
-    double P = kp*error;
-    double I = ki*(error+prev_error)*dT;
-    double D = kd*(error-prev_error)/dT;
-    double output = (P+I+D)+prev_output;
-    prev_error = error;
-    return output;
+    return 1.0;
 }
 
 /**
@@ -62,12 +55,5 @@ double Controller::compute_pid(double target_setpoint, double prev_output){
  * @return double : new_velocity
  */
 double Controller::calculate(double target_setpoint, double actual_velocity, int iterations){
-    double prev_output = actual_velocity; // Output from the pid controller
-    int i =0;
-    while (i<iterations){
-        prev_output = compute_pid(target_setpoint, prev_output);
-        cout<<"OUTPUT : "<<prev_output<<endl;
-        i++;
-    }
-    return prev_output;
+    return 0.0;
 }
