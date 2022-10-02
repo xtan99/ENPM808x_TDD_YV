@@ -8,7 +8,7 @@ class Controller {
         double kp=0.0, ki=0.0, kd= 0.0; 
 
         // Temp values Not to change
-        double max=100.0, min=0.0, dT =0.01;
+        double dT =0.01;
         double prev_error=0.0; 
     public:
         Controller(double kp, double ki, double kd);

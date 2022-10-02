@@ -1,7 +1,7 @@
 /**
  * @file main.cpp
- * @author Yashveer Jain (github.com/yashveer-umd)
- * @brief 
+ * @author Yashveer Jain (yashveer@umd.edu) and  Vignesh Ravichandran Radhakrishnan (rr94@umd.edu)
+ * @brief Main code to run the PID controller
  * @version 0.1
  * @date 2022-10-01
  * 
