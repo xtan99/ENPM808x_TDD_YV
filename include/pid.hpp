@@ -2,6 +2,10 @@
 
 #include <iostream>
 
+/**
+ * @brief Controller class which will contain the computation for PID controller
+ * 
+ */
 class Controller {
     private:
         // Only change the PID constants ->
