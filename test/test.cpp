@@ -11,7 +11,7 @@ TEST(PIDTest, checkComputeMethod) {
 
 TEST(TestController, CheckOutputVelocityAfterCertainIteration) {
   // TODO Change kp, ki, kd
-  double kp=0.0, ki=1.0, kd= 0.0;
+  double kp=1.0, ki=1.0, kd= 0.0;
   
   // No Change require in below code
   Controller pid(kp,ki,kd);

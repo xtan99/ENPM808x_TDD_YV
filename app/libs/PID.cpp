@@ -51,6 +51,7 @@ double Controller::compute_pid(double target_setpoint, double prev_output)
     double i_error = prev_error * dT + (error - prev_error) * dT/2;
 
     double out = kp * error + kd * d_error + ki*(i_error) + prev_output;
+    prev_error = error;
     return out;
 }
 
@@ -62,6 +63,13 @@ double Controller::compute_pid(double target_setpoint, double prev_output)
  * @param iterations How many iterations you want to run for matching output velocity to desire velocity
  * @return double : new_velocity
  */
-double Controller::calculate(double target_setpoint, double actual_velocity, int iterations){
+double Controller::calculate(double target_setpoint, double actual_velocity, int iterations)
+{
+    double current_velocity = actual_velocity;
+    for ( int i = 0; i < iterations; i++)
+    {
+        current_velocity = compute_pid( target_setpoint, current_velocity);
+    }
+    return current_velocity;
     return 1.0;
 }
