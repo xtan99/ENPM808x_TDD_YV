@@ -13,7 +13,7 @@ if (COVERAGE)
         app/*.cpp include/*.hpp app/libs/*.cpp
     )
     include(CodeCoverage)
-    set(LCOV_REMOVE_EXTRA "'vendor/*'")
+    set(LCOV_REMOVE_EXTRA "'*vendor/*'")
     setup_target_for_coverage(code_coverage test/cpp-test coverage)
     set(COVERAGE_SRCS ${SOURCES})
 

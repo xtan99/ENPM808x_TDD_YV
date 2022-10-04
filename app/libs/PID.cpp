@@ -34,7 +34,7 @@ Controller::Controller(double kp, double ki, double kd){
  * 
  */
 void Controller :: print_constants(){
-            std::cout<< "Proportional Constant : " << kp<< ", Integral Constant : " << ki << ", Differetial Constant : " << kd <<endl;}
+           std::cout<< "Proportional Constant : " << kp<< ", Integral Constant : " << ki << ", Differetial Constant : " << kd <<endl;}
 
 /**
  * @brief calculate the output of PID per iteration
@@ -71,5 +71,4 @@ double Controller::calculate(double target_setpoint, double actual_velocity, int
         current_velocity = compute_pid( target_setpoint, current_velocity);
     }
     return current_velocity;
-    return 1.0;
 }

@@ -15,6 +15,7 @@ TEST(TestController, CheckOutputVelocityAfterCertainIteration) {
   
   // No Change require in below code
   Controller pid(kp,ki,kd);
+  pid.print_constants();
   double target_setpoint = 0;
   double actual_velocity = 1;
   int iterations = 1000;
