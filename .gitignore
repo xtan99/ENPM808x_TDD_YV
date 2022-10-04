@@ -11,3 +11,6 @@ build/
 *.pyc
 
 *.violet.html
+
+# IDX files
+*.idx

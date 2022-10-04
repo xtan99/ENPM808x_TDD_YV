@@ -9,6 +9,7 @@
  * 
  */
 #include <iostream>
+#include <iterator>
 #include "pid.hpp"
 
 
@@ -42,8 +43,15 @@ void Controller :: print_constants(){
  * @param prev_output 
  * @return double
  */
-double Controller::compute_pid(double target_setpoint, double prev_output){
-    return 1.0;
+double Controller::compute_pid(double target_setpoint, double prev_output)
+{
+    double error = target_setpoint - prev_output;
+    double d_error = (error - prev_error)/dT ;
+
+    double i_error = prev_error * dT + (error - prev_error) * dT/2;
+
+    double out = kp * error + kd * d_error + ki*(i_error) + prev_output;
+    return out;
 }
 
 /**
@@ -55,5 +63,5 @@ double Controller::compute_pid(double target_setpoint, double prev_output){
  * @return double : new_velocity
  */
 double Controller::calculate(double target_setpoint, double actual_velocity, int iterations){
-    return 0.0;
+    return 1.0;
 }
