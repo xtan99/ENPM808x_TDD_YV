@@ -44,3 +44,7 @@ This generates a index.html page in the build/coverage sub-directory that can be
 ### Part 1
 * Yashveer Jain (Driver)
 * Vignesh Ravichandran Radhakrishnan (Navigator)
+
+## Part 2
+* Tanmay Haldankar (Driver)
+* Qamar Syed (Navigator)
