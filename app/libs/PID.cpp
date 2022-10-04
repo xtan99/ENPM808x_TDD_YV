@@ -23,7 +23,7 @@ using std::endl;
  * @param ki 
  * @param kd 
  */
-Controller::Controller(double kp, double ki, double kd){
+Controller::Controller(double kp, double ki, double kd) {
     this->kp = kp;
     this->kd = kd;
     this->ki = ki;
@@ -33,7 +33,7 @@ Controller::Controller(double kp, double ki, double kd){
  * @brief Print the PID gains
  * 
  */
-void Controller :: print_constants(){
+void Controller :: print_constants() {
            std::cout<< "Proportional Constant : " << kp<< ", Integral Constant : " << ki << ", Differetial Constant : " << kd <<endl;}
 
 /**
@@ -46,7 +46,7 @@ void Controller :: print_constants(){
 double Controller::compute_pid(double target_setpoint, double prev_output)
 {
     double error = target_setpoint - prev_output;
-    double d_error = (error - prev_error)/dT ;
+    double d_error = (error - prev_error)/dT;
 
     double i_error = prev_error * dT + (error - prev_error) * dT/2;
 

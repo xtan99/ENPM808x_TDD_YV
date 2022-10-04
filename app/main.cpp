@@ -21,6 +21,6 @@ int main() {
     Controller pid(kp, ki, kd);
     int iterations = 1000;
     double output = pid.calculate(target_setpoint, actual_velocity, iterations);
-    std::cout << " Final Output : "<<output << " " <<std::endl ;
+    std::cout << " Final Output : "<<output << " " <<std::endl;
     return 0;
 }
