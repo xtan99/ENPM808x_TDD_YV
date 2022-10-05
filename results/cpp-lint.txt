@@ -1,0 +1,33 @@
+main.cpp:12:  Include the directory when naming header files  [build/include_subdir] [4]
+main.cpp:15:  Missing username in TODO; it should look like "// TODO(my_username): Stuff."  [readability/todo] [2]
+main.cpp:24:  Missing spaces around <<  [whitespace/operators] [3]
+Done processing main.cpp
+Total errors found: 3
+
+PID.cpp:13:  Include the directory when naming header files  [build/include_subdir] [4]
+PID.cpp:37:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+PID.cpp:47:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+PID.cpp:66:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+PID.cpp:67:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+PID.cpp:70:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+PID.cpp:71:  Extra space after ( in function call  [whitespace/parens] [4]
+Done processing PID.cpp
+Total errors found: 7
+
+
+
+
+
+pid.hpp:10:  private: should be indented +1 space inside class Controller  [whitespace/indent] [3]
+pid.hpp:12:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+pid.hpp:12:  Missing spaces around =  [whitespace/operators] [4]
+pid.hpp:15:  Missing spaces around =  [whitespace/operators] [4]
+pid.hpp:16:  Line ends in whitespace.  Consider deleting these extra spaces.  [whitespace/end_of_line] [4]
+pid.hpp:16:  Missing spaces around =  [whitespace/operators] [4]
+pid.hpp:17:  public: should be indented +1 space inside class Controller  [whitespace/indent] [3]
+pid.hpp:20:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+pid.hpp:20:  Missing space after ,  [whitespace/comma] [3]
+Done processing pid.hpp
+Total errors found: 11
+
+

@@ -5,10 +5,11 @@
  * @version 0.1
  * @date 2022-09-30
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2022 Vignesh Ravichandran Radhakrishnan
  * 
  */
 #include <iostream>
+#include <iterator>
 #include "pid.hpp"
 
 
@@ -22,7 +23,7 @@ using std::endl;
  * @param ki 
  * @param kd 
  */
-Controller::Controller(double kp, double ki, double kd){
+Controller::Controller(double kp, double ki, double kd) {
     this->kp = kp;
     this->kd = kd;
     this->ki = ki;
@@ -32,8 +33,8 @@ Controller::Controller(double kp, double ki, double kd){
  * @brief Print the PID gains
  * 
  */
-void Controller :: print_constants(){
-            std::cout<< "Proportional Constant : " << kp<< ", Integral Constant : " << ki << ", Differetial Constant : " << kd <<endl;}
+void Controller :: print_constants() {
+           std::cout<< "Proportional Constant : " << kp<< ", Integral Constant : " << ki << ", Differetial Constant : " << kd <<endl;}
 
 /**
  * @brief calculate the output of PID per iteration
@@ -42,8 +43,16 @@ void Controller :: print_constants(){
  * @param prev_output 
  * @return double
  */
-double Controller::compute_pid(double target_setpoint, double prev_output){
-    return 1.0;
+double Controller::compute_pid(double target_setpoint, double prev_output)
+{
+    double error = target_setpoint - prev_output;
+    double d_error = (error - prev_error)/dT;
+
+    double i_error = prev_error * dT + (error - prev_error) * dT/2;
+
+    double out = kp * error + kd * d_error + ki*(i_error) + prev_output;
+    prev_error = error;
+    return out;
 }
 
 /**
@@ -54,6 +63,12 @@ double Controller::compute_pid(double target_setpoint, double prev_output){
  * @param iterations How many iterations you want to run for matching output velocity to desire velocity
  * @return double : new_velocity
  */
-double Controller::calculate(double target_setpoint, double actual_velocity, int iterations){
-    return 0.0;
+double Controller::calculate(double target_setpoint, double actual_velocity, int iterations)
+{
+    double current_velocity = actual_velocity;
+    for ( int i = 0; i < iterations; i++)
+    {
+        current_velocity = compute_pid( target_setpoint, current_velocity);
+    }
+    return current_velocity;
 }

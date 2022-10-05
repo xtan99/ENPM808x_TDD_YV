@@ -5,7 +5,7 @@
  * @version 0.1
  * @date 2022-10-01
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2022 Vignesh Ravichandran Radhakrishnan
  * 
  */
 #include <iostream>
@@ -21,6 +21,6 @@ int main() {
     Controller pid(kp, ki, kd);
     int iterations = 1000;
     double output = pid.calculate(target_setpoint, actual_velocity, iterations);
-    std::cout << " Final Output : "<<output << " " <<std::endl ;
+    std::cout << " Final Output : "<<output << " " <<std::endl;
     return 0;
 }
