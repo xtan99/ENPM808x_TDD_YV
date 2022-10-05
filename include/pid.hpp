@@ -4,7 +4,7 @@
 
 /**
  * @brief Controller class which will contain the computation for PID controller
- * 
+ * @copyright Copyright (c) 2022 Vignesh Ravichandran Radhakrishnan
  */
 class Controller {
     private:

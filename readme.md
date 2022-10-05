@@ -45,6 +45,12 @@ This generates a index.html page in the build/coverage sub-directory that can be
 * Be aware of whitespaces in code, as they can flag type 5 and above errors in the cpp-lint check.
 * Follow a consistent style and common conventions while coding.
 * Avoid using .hpp files and use .cpp and .h files seperately instead.
+* Run the following command to format in the google coding style
+```
+cd app
+clang-format -style=Google -i app/main.cpp
+
+```
 
 
 ## Authors

@@ -5,7 +5,7 @@
  * @version 0.1
  * @date 2022-10-01
  * 
- * @copyright Copyright (c) 2022
+ * @copyright Copyright (c) 2022 Vignesh Ravichandran Radhakrishnan
  * 
  */
 #include <iostream>
